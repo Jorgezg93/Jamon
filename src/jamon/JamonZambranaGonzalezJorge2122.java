@@ -6,115 +6,158 @@ package jamon;
 
 /**
  *
- * @author portatil_profesorado
+ * @author Jorge Zambrana González
  */
 public class JamonZambranaGonzalezJorge2122 {
-    
+
     private String categoria;
     private double precio;
     private int mesesCuracion;
     private int stock;
 
     /* Constructor sin argumentos */
-    public JamonZambranaGonzalezJorge2122 ()
-    {
+    public JamonZambranaGonzalezJorge2122() {
     }
+
     // Constructor con parámetro para iniciar todas las propiedades de la clase
     // jamon
-    
-    public JamonZambranaGonzalezJorge2122 (String cat, double precio, int stock)
-    {
-        this.categoria =cat;
-        this.precio=precio;
-        this.stock=stock;
+    /**
+     * Método para crear objetos de tipo Jamón, con una categoría, precio y
+     * stock pasados como parámetros
+     *
+     * @param cat
+     * @param precio
+     * @param stock
+     */
+    public JamonZambranaGonzalezJorge2122(String cat, double precio, int stock) {
+        this.categoria = cat;
+        this.precio = precio;
+        this.stock = stock;
     }
-   // Método para asignar la categoría del jamón
-    public void asignarCategoria(String cat)
-    {
+    // Método para asignar la categoría del jamón
+
+    /**
+     * Método para establecer una categoría al jamón
+     * @param cat Categoría que se quiere establecer
+     */
+    public void asignarCategoria(String cat) {
         setCategoria(cat);
     }
+
     // Método que me devuelve la categoría del jamón
-    public String obtenerCategoria()
-    {
+    /**
+     * Método para devolver la categoría del jamón
+     * @return La categoría del jamón
+     */
+    public String obtenerCategoria() {
         return getCategoria();
     }
 
     // Método que me devuelve el stock de jamones disponible en cada momento
-     public int obtenerStock ()
-    {
+    /**
+     * Método para devolver el stock de jamones
+     * @return El stock de jamones
+     */
+    public int obtenerStock() {
         return getStock();
     }
 
-    /* Método para comprar coches. Modifica el stock.
+    /* Método para comprar jamones. Modifica el stock.
      * Este método va a ser probado con Junit
      */
-    public void comprar(int cantidad) throws Exception
-    {
-        if (cantidad<0)
+    public void comprar(int cantidad) throws Exception {
+        if (cantidad < 0) {
             throw new Exception("No se puede comprar un nº negativo de jamones");
+        }
         setStock(getStock() + cantidad);
     }
 
-    public void vender (int cantidad, String paisZambranaGonzalezJorge2122) throws Exception
-    {
-        if (cantidad <= 0)
-            throw new Exception ("No se puede vender una cantidad negativa de jamones");
-        if (obtenerStock()< cantidad)
-            throw new Exception ("No  hay suficientes jamones para vender");
+    /**
+     * Método para vender una cantidad concreta de jamones
+     *
+     * @param cantidad Cantidad de jamones que se quieren vender
+     * @param paisZambranaGonzalezJorge2122 El jamón concreto que se quiere
+     * vender
+     * @throws Exception Lanza excepción si se manda una cantidad negativa, o no
+     * hay suficiente stock
+     */
+    public void vender(int cantidad, String paisZambranaGonzalezJorge2122) throws Exception {
+        if (cantidad <= 0) {
+            throw new Exception("No se puede vender una cantidad negativa de jamones");
+        }
+        if (obtenerStock() < cantidad) {
+            throw new Exception("No  hay suficientes jamones para vender");
+        }
         setStock(getStock() - cantidad);
     }
 
     /**
-     * @return the categoria
+     * Método para obtener la categoría del jamón
+     *
+     * @return la categoría del jamón
      */
     public String getCategoria() {
         return categoria;
     }
 
     /**
-     * @param categoria the categoria to set
+     * Método para establecer la categoría del jamón
+     *
+     * @param categoria La categoría del jamón
      */
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
     /**
-     * @return the precio
+     * Método para obtener el precio del jamón
+     *
+     * @return El precio del jamón
      */
     public double getPrecio() {
         return precio;
     }
 
     /**
-     * @param precio the precio to set
+     * Método para establecer el precio del jamón
+     *
+     * @param precio El precio del jamón
      */
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
     /**
-     * @return the mesesCuracion
+     * Método para obtener los meses de curación del jamón
+     *
+     * @return Los meses de curación
      */
     public int getMesesCuracion() {
         return mesesCuracion;
     }
 
     /**
-     * @param mesesCuracion the mesesCuracion to set
+     * Método para establecer los meses de curación del jamón
+     *
+     * @param mesesCuracion Los meses de curación
      */
     public void setMesesCuracion(int mesesCuracion) {
         this.mesesCuracion = mesesCuracion;
     }
 
     /**
-     * @return the stock
+     * Método para obtener el stock del jamón
+     *
+     * @return El stock del jamón
      */
     public int getStock() {
         return stock;
     }
 
     /**
-     * @param stock the stock to set
+     * Método para establecer el stock del jamón
+     *
+     * @param stock El stock del jamón
      */
     public void setStock(int stock) {
         this.stock = stock;
